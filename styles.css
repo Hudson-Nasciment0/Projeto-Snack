@@ -21,6 +21,10 @@ body {
     transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
+.fa-solid, span{
+    color: var(--secondary-color);
+}
+
 header {
     background-color: var(--primary-color);
     padding: 1rem;
@@ -139,6 +143,15 @@ h1, h2 {
 .gallery-images img:hover {
     transform: scale(1.1);
 }
+
+#contact h2{
+    text-align: center;
+}
+
+#menu h2{
+    text-align: center;
+}
+
 
 #contact form {
     max-width: 500px;
