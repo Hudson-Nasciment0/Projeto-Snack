@@ -76,6 +76,8 @@ nav {
 
 main {
     padding: 6rem 2rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 section {
@@ -138,31 +140,62 @@ h1, h2 {
     transform: scale(1.1);
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+#contact form {
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-input, textarea, form button {
+.form-group {
     margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
     padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    height: 150px;
 }
 
 form button {
     background-color: var(--primary-color);
     color: white;
     border: none;
+    padding: 0.75rem 1rem;
     cursor: pointer;
     transition: background-color var(--transition-speed);
+    width: 100%;
 }
 
 form button:hover {
     background-color: var(--secondary-color);
 }
 
+#location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #map {
     height: 400px;
     width: 100%;
+    max-width: 800px;
+    margin-bottom: 1rem;
+}
+
+.address-info {
+    text-align: center;
 }
 
 footer {
@@ -216,29 +249,18 @@ footer {
     cursor: pointer;
 }
 
-/* Dark mode */
-body.dark-mode {
-    --text-color: #f0f0f0;
-    --background-color: #333;
-}
-
-body.dark-mode #dark-mode-toggle .fa-sun {
+.menu-toggle {
     display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
-body.dark-mode #dark-mode-toggle .fa-moon {
-    display: inline;
-}
-
-/* Responsive design */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
-        background: none;
-        border: none;
-        color: white;
-        font-size: 1.5rem;
-        cursor: pointer;
     }
 
     .nav-links {
@@ -260,4 +282,18 @@ body.dark-mode #dark-mode-toggle .fa-moon {
         margin-right: 0;
         margin-bottom: 0.5rem;
     }
+}
+
+/* Dark mode */
+body.dark-mode {
+    --text-color: #f0f0f0;
+    --background-color: #333;
+}
+
+body.dark-mode #dark-mode-toggle .fa-sun {
+    display: none;
+}
+
+body.dark-mode #dark-mode-toggle .fa-moon {
+    display: inline;
 }

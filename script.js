@@ -43,13 +43,27 @@ function loadDarkModePreference() {
 
 loadDarkModePreference();
 
+// Efeito de digitação no logo
+const typedLogo = document.getElementById('typed-logo');
+const logoText = typedLogo.textContent;
+typedLogo.textContent = '';
+
+function typeWriter(text, i = 0) {
+    if (i < text.length) {
+        typedLogo.textContent += text.charAt(i);
+        setTimeout(() => typeWriter(text, i + 1), 100);
+    }
+}
+
+typeWriter(logoText);
+
 // Menu items
 const menuItems = [
-    { id: 1, name: 'Hambúrguer Clássico', price: 15.99, category: 'burger', image: 'classic-burger.jpg' },
-    { id: 2, name: 'Hambúrguer Vegetariano', price: 14.99, category: 'burger', image: 'veggie-burger.jpg' },
-    { id: 3, name: 'Batata Frita', price: 5.99, category: 'side', image: 'fries.jpg' },
-    { id: 4, name: 'Refrigerante', price: 3.99, category: 'drink', image: 'soda.jpg' },
-    // Adicione mais itens conforme necessário
+    { id: 1, name: 'Hambúrguer Clássico', price: 15.99, category: 'burger', image: 'classic-burger.jpg', description: 'Carne suculenta, queijo, alface e tomate.' },
+    { id: 2, name: 'Hambúrguer Vegetariano', price: 14.99, category: 'burger', image: 'veggie-burger.jpg', description: 'Hambúrguer de grão-de-bico com legumes grelhados.' },
+    { id: 3, name: 'Batata Frita', price: 5.99, category: 'side', image: 'fries.jpg', description: 'Batatas crocantes e douradas.' },
+    { id: 4, name: 'Refrigerante', price: 3.99, category: 'drink', image: 'soda.jpg', description: 'Diversas opções de refrigerantes.' },
+    { id: 5, name: 'Milk-shake', price: 7.99, category: 'drink', image: 'milkshake.jpg', description: 'Milk-shake cremoso em diversos sabores.' }
 ];
 
 const menuItemsContainer = document.querySelector('.menu-items');
@@ -59,7 +73,8 @@ function displayMenuItems(items) {
         <div class="menu-item" data-category="${item.category}">
             <img src="${item.image}" alt="${item.name}" loading="lazy">
             <h3>${item.name}</h3>
-            <p>R$ ${item.price.toFixed(2)}</p>
+            <p>${item.description}</p>
+            <p class="price">R$ ${item.price.toFixed(2)}</p>
             <button onclick="addToCart(${item.id})">Adicionar ao Carrinho</button>
         </div>
     `).join('');
@@ -85,11 +100,22 @@ function addToCart(itemId) {
     const item = menuItems.find(item => item.id === itemId);
     cart.push(item);
     updateCartCount();
+    showNotification(`${item.name} adicionado ao carrinho!`);
 }
 
 function updateCartCount() {
     const cartCount = document.getElementById('cart-count');
     cartCount.textContent = cart.length;
+}
+
+function showNotification(message) {
+    const notification = document.createElement('div');
+    notification.classList.add('notification');
+    notification.textContent = message;
+    document.body.appendChild(notification);
+    setTimeout(() => {
+        notification.remove();
+    }, 3000);
 }
 
 // Modal do carrinho
@@ -114,11 +140,11 @@ function closeCartModal() {
 }
 
 function updateCartDisplay() {
-    cartItemsContainer.innerHTML = cart.map(item => `
-        <div>
+    cartItemsContainer.innerHTML = cart.map((item, index) => `
+        <div class="cart-item">
             <span>${item.name}</span>
             <span>R$ ${item.price.toFixed(2)}</span>
-            <button onclick="removeFromCart(${item.id})">Remover</button>
+            <button onclick="removeFromCart(${index})">Remover</button>
         </div>
     `).join('');
 
@@ -126,16 +152,17 @@ function updateCartDisplay() {
     cartTotal.textContent = total.toFixed(2);
 }
 
-function removeFromCart(itemId) {
-    const index = cart.findIndex(item => item.id === itemId);
-    if (index !== -1) {
-        cart.splice(index, 1);
-        updateCartCount();
-        updateCartDisplay();
-    }
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCartCount();
+    updateCartDisplay();
 }
 
 function checkout() {
+    if (cart.length === 0) {
+        alert('Seu carrinho está vazio!');
+        return;
+    }
     alert('Compra finalizada! Total: R$ ' + cartTotal.textContent);
     cart = [];
     updateCartCount();
@@ -147,7 +174,8 @@ const galleryImages = [
     'gallery1.jpg',
     'gallery2.jpg',
     'gallery3.jpg',
-    // Adicione mais imagens conforme necessário
+    'gallery4.jpg',
+    'gallery5.jpg'
 ];
 
 const galleryContainer = document.querySelector('.gallery-images');
@@ -194,11 +222,21 @@ function validateForm() {
     const message = document.getElementById('message').value;
 
     if (!name || !email || !message) {
-        alert('Por favor, preencha todos os campos.');
+        alert('Por favor, preencha todos os campos obrigatórios.');
+        return false;
+    }
+
+    if (!isValidEmail(email)) {
+        alert('Por favor, insira um endereço de e-mail válido.');
         return false;
     }
 
     return true;
+}
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
 }
 
 // Google Maps (substitua YOUR_API_KEY pela sua chave de API do Google Maps)
@@ -215,3 +253,14 @@ function initMap() {
         title: 'Hamburgueria Delícia'
     });
 }
+
+// Animação de rolagem suave
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
