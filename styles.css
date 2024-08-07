@@ -21,6 +21,18 @@ body {
     transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
+#testejs{
+    color: red;
+}
+
+#testebutton{
+    background-color: red;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    width: 100px;
+}
+
 .fa-solid, span{
     color: var(--secondary-color);
 }

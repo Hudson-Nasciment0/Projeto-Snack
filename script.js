@@ -59,11 +59,11 @@ typeWriter(logoText);
 
 // Menu items
 const menuItems = [
-    { id: 1, name: 'Hambúrguer Clássico', price: 15.99, category: 'burger', image: 'classic-burger.jpg', description: 'Carne suculenta, queijo, alface e tomate.' },
-    { id: 2, name: 'Hambúrguer Vegetariano', price: 14.99, category: 'burger', image: 'veggie-burger.jpg', description: 'Hambúrguer de grão-de-bico com legumes grelhados.' },
-    { id: 3, name: 'Batata Frita', price: 5.99, category: 'side', image: 'fries.jpg', description: 'Batatas crocantes e douradas.' },
-    { id: 4, name: 'Refrigerante', price: 3.99, category: 'drink', image: 'soda.jpg', description: 'Diversas opções de refrigerantes.' },
-    { id: 5, name: 'Milk-shake', price: 7.99, category: 'drink', image: 'milkshake.jpg', description: 'Milk-shake cremoso em diversos sabores.' }
+    { id: 1, name: 'Hambúrguer Clássico', price: 15.99, category: 'burger', image: '/img/classic-burger.jpg', description: 'Carne suculenta, queijo, alface e tomate.' },
+    { id: 2, name: 'Hambúrguer Vegetariano', price: 14.99, category: 'burger', image: 'images/veggie-burger.jpg', description: 'Hambúrguer de grão-de-bico com legumes grelhados.' },
+    { id: 3, name: 'Batata Frita', price: 5.99, category: 'side', image: 'images/fries.jpg', description: 'Batatas crocantes e douradas.' },
+    { id: 4, name: 'Refrigerante', price: 3.99, category: 'drink', image: 'images/soda.jpg', description: 'Diversas opções de refrigerantes.' },
+    { id: 5, name: 'Milk-shake', price: 7.99, category: 'drink', image: 'images/milkshake.jpg', description: 'Milk-shake cremoso em diversos sabores.' }
 ];
 
 const menuItemsContainer = document.querySelector('.menu-items');
@@ -71,11 +71,11 @@ const menuItemsContainer = document.querySelector('.menu-items');
 function displayMenuItems(items) {
     menuItemsContainer.innerHTML = items.map(item => `
         <div class="menu-item" data-category="${item.category}">
-            <img src="${item.image}" alt="${item.name}" loading="lazy">
-            <h3>${item.name}</h3>
-            <p>${item.description}</p>
-            <p class="price">R$ ${item.price.toFixed(2)}</p>
-            <button onclick="addToCart(${item.id})">Adicionar ao Carrinho</button>
+            <img src="${item.image}" alt="${item.name}" loading="lazy" style="width: 200px; ">
+            <h3 id="testejs">${item.name}</h3>
+            <p id="testejs2">${item.description}</p>
+            <p id="testejs3" class="price">R$ ${item.price.toFixed(2)}</p>
+            <button id="testebutton" onclick="addToCart(${item.id})">Adicionar ao Carrinho</button>
         </div>
     `).join('');
 }
