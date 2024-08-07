@@ -264,3 +264,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+
+
+
+/*========== scroll reveal ==========*/
+ScrollReveal({
+  //  reset: true,
+    distance: '80px',
+    duration: 2000,
+    delay: 200
+ });
+
+ ScrollReveal().reveal('.home-content, #menu, #gallery, #location', { origin: 'top' });
+
+ ScrollReveal().reveal('.home-img', { origin: 'bottom' });
+
+ ScrollReveal().reveal('.home-content h1, .menu-filters, #contact', { origin: 'left' });
+
+ ScrollReveal().reveal('.home-content p, #location', { origin: 'right' });
