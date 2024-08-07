@@ -65,6 +65,10 @@ nav {
     color: var(--secondary-color);
 }
 
+#cart-count{
+    color: white;
+}
+
 .right-icons button {
     background: none;
     border: none;
