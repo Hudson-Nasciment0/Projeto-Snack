@@ -23,6 +23,22 @@ body {
     transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
+#testejs{
+    color: red;
+}
+
+#radius-img{
+    border-radius: 100px;
+}
+
+#testebutton{
+    background-color: red;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    width: 100px;
+}
+
 .fa-solid, span{
     color: var(--secondary-color);
 }
@@ -95,6 +111,7 @@ main {
 section #home{
     min-height: 100vh;
     padding: 10rem 9% 2rem;
+   
 }
 
 #home{
@@ -126,6 +143,7 @@ section #home{
 .home-img img{
     width: 35vw;
     animation: floatImage 4s ease-in-out infinite;
+    margin-left: 50px;
 }
 
 @keyframes floatImage{

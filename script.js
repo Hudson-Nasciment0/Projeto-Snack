@@ -59,11 +59,14 @@ typeWriter(logoText);
 
 // Menu items
 const menuItems = [
-    { id: 1, name: 'Hambúrguer Clássico', price: 15.99, category: 'burger', image: 'classic-burger.jpg', description: 'Carne suculenta, queijo, alface e tomate.' },
-    { id: 2, name: 'Hambúrguer Vegetariano', price: 14.99, category: 'burger', image: 'veggie-burger.jpg', description: 'Hambúrguer de grão-de-bico com legumes grelhados.' },
-    { id: 3, name: 'Batata Frita', price: 5.99, category: 'side', image: 'fries.jpg', description: 'Batatas crocantes e douradas.' },
-    { id: 4, name: 'Refrigerante', price: 3.99, category: 'drink', image: 'soda.jpg', description: 'Diversas opções de refrigerantes.' },
-    { id: 5, name: 'Milk-shake', price: 7.99, category: 'drink', image: 'milkshake.jpg', description: 'Milk-shake cremoso em diversos sabores.' }
+    { id: 1, name: 'Hambúrguer Clássico', price: 15.99, category: 'burger', image: '/img/classic-burger.jpg', description: 'Carne suculenta, queijo, alface e tomate.' },
+    { id: 2, name: 'Hambúrguer Vegetariano', price: 14.99, category: 'burger', image: '/img/Veggie.jpeg', description: 'Hambúrguer de grão-de-bico com legumes grelhados.' },
+    { id: 3, name: 'Batata Frita', price: 5.99, category: 'side', image: '/img/batata-frita.jpg', description: 'Batatas crocantes e douradas.' },
+    { id: 4, name: 'Refrigerante', price: 3.99, category: 'drink', image: '/img/coca-cola.jpg', description: 'Diversas opções de refrigerantes.' },
+    { id: 5, name: 'Milk-shake', price: 7.99, category: 'drink', image: '/img/Milk-shake.jpeg', description: 'Milk-shake cremoso em diversos sabores.' },
+    { id: 6, name: 'Texas-Burguer', price: 18.99, category: 'burger', image: '/img/burguer2.jpg', description: 'Duas carnes artesanais, queijo cheddar, tomate e picles.' },
+    { id: 7, name: 'Batata Rustica', price: 14.99, category: 'side', image: '/img/Batata-Rustica.jpeg', description: 'Batata Rustica com Alho ralado e Alecrim' },
+    { id: 8, name: 'FOME ZERO', price: 19.99, category: 'burger', image: '/img/Fome ZERO.jpeg', description: 'Hambúrguer de 10 carnes para os famintos!' }
 ];
 
 const menuItemsContainer = document.querySelector('.menu-items');
@@ -71,11 +74,11 @@ const menuItemsContainer = document.querySelector('.menu-items');
 function displayMenuItems(items) {
     menuItemsContainer.innerHTML = items.map(item => `
         <div class="menu-item" data-category="${item.category}">
-            <img src="${item.image}" alt="${item.name}" loading="lazy">
-            <h3>${item.name}</h3>
-            <p>${item.description}</p>
-            <p class="price">R$ ${item.price.toFixed(2)}</p>
-            <button onclick="addToCart(${item.id})">Adicionar ao Carrinho</button>
+            <img id="radius-img" src="${item.image}" alt="${item.name}" loading="lazy" style="width: 200px; ">
+            <h3 id="testejs">${item.name}</h3>
+            <p id="testejs2">${item.description}</p>
+            <p id="testejs3" class="price">R$ ${item.price.toFixed(2)}</p>
+            <button id="testebutton" onclick="addToCart(${item.id})">Adicionar ao Carrinho</button>
         </div>
     `).join('');
 }
