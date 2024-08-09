@@ -194,7 +194,9 @@ h1, h2 {
 
 .menu-filters {
     margin-bottom: 1rem;
-    text-align: center;
+    justify-content: center;
+    display: flex;
+    gap: 4rem;
 }
 
 .menu-filters button {
@@ -215,7 +217,6 @@ h1, h2 {
 .menu-items {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1rem;
 }
 
 .menu-item {
@@ -394,6 +395,25 @@ footer {
     cursor: pointer;
 }
 
+@media (max-width: 930px) {
+    #home{
+        flex-direction: column;
+    }
+
+    .home-content h1{
+        font-size: 2.6rem;
+    }
+
+    .home-content h2{
+        font-size: 2rem;
+    }
+
+    .home-img img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}
+
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
@@ -423,7 +443,7 @@ footer {
 /* Dark mode */
 body.dark-mode {
     --text-color: #f0f0f0;
-    --background-color: #333;
+    --background-color: #000000;
 }
 
 body.dark-mode #dark-mode-toggle .fa-sun {
