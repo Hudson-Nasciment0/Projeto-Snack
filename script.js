@@ -166,7 +166,24 @@ function checkout() {
         alert('Seu carrinho está vazio!');
         return;
     }
-    alert('Compra finalizada! Total: R$ ' + cartTotal.textContent);
+
+    // Cria uma mensagem com os itens do carrinho e o total
+    let message = 'Olá! Gostaria de finalizar a compra dos seguintes itens:\n\n';
+    cart.forEach(item => {
+        message += `- ${item.name}: R$ ${item.price.toFixed(2)}\n`;
+    });
+    message += `\nTotal: R$ ${cartTotal.textContent}`;
+
+    // Codifica a mensagem para ser usada na URL
+    const encodedMessage = encodeURIComponent(message);
+
+    // Cria a URL do WhatsApp com a mensagem pré-preenchida
+    const whatsappURL = `https://wa.me/5522999486732?text=${encodedMessage}`;
+
+    // Redireciona o usuário para o WhatsApp
+    window.open(whatsappURL, '_blank');
+
+    // Limpa o carrinho após o checkout
     cart = [];
     updateCartCount();
     closeCartModal();
