@@ -147,7 +147,7 @@ function updateCartDisplay() {
         <div class="cart-item">
             <span>${item.name}</span>
             <span>R$ ${item.price.toFixed(2)}</span>
-            <button onclick="removeFromCart(${index})">Remover</button>
+            <button id="buttonDelete" onclick="removeFromCart(${index})">Remover</button>
         </div>
     `).join('');
 
