@@ -191,16 +191,16 @@ function checkout() {
 
 // Galeria
 const galleryImages = [
-    '/img/Big-snack-1.jpeg',
-    '/img/Big-snack-2.webp',
-    '/img/Big-snack-3.webp',
-    '/img/galeria3.jpg',
-    '/img/galeria1.jpg',
-    '/img/galeria2.jpg',
-    '/img/galeria6.jpg',
-    '/img/galeria5.jpg',
-    '/img/Big-snack-4.webp',
-    '/img/Big-Snack-6.jpeg'
+    './img/Big-snack-1.jpeg',
+    './img/Big-snack-2.webp',
+    './img/Big-snack-3.webp',
+    './img/galeria3.jpg',
+    './img/galeria1.jpg',
+    './img/galeria2.jpg',
+    './img/galeria6.jpg',
+    './img/galeria5.jpg',
+    './img/Big-snack-4.webp',
+    './img/Big-Snack-6.jpeg'
 ];
 
 const galleryContainer = document.querySelector('.gallery-images');
