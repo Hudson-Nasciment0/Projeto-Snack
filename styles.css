@@ -217,6 +217,12 @@ section #home{
     box-shadow: none;
 }
 
+/* .menu-filters{
+   display: flex;
+   flex-direction: column;
+   gap: 0;
+} */
+
 .menu-filters button:hover{
     box-shadow: none;
 }
@@ -361,6 +367,7 @@ form button:hover {
     font-size: 2rem;
 }
 
+
 #map {
     height: 400px;
     width: 100%;
@@ -452,7 +459,7 @@ footer {
     cursor: pointer;
 }
 
-@media (max-width: 930px) {
+@media (max-width: 950px) {
     #home{
         flex-direction: column;
     }
@@ -471,10 +478,44 @@ footer {
     }
 }
 
+@media (max-width: 900px) {
+    #home{
+        flex-direction: column;
+    }
+
+    .home-content h1{
+        font-size: 2.6rem;
+    }
+
+    .home-content h2{
+        font-size: 2rem;
+    }
+
+    .home-img img{
+        width: 70vw;
+        margin-top: 4rem;
+        position: relative;
+        right: 15px;
+    }
+
+    .menu-filters{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 25px auto;
+        width: 225px;
+    }
+}
+
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
     }
+
+    #location iframe{
+        width: 90vw;
+    }
+    
 
     .nav-links {
         display: none;
