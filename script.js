@@ -66,7 +66,7 @@ const menuItems = [
     { id: 5, name: 'Milk-shake', price: 7.99, category: 'drink', image: './img/Milk-shake.jpeg', description: 'Milk-shake cremoso em diversos sabores.' },
     { id: 6, name: 'Texas-Burguer', price: 18.99, category: 'burger', image: './img/burguer2.jpg', description: 'Duas carnes artesanais, queijo cheddar, tomate e picles.' },
     { id: 7, name: 'Batata Rustica', price: 14.99, category: 'side', image: './img/Batata-Rustica.jpeg', description: 'Batata Rustica com Alho ralado e Alecrim' },
-    { id: 8, name: 'FOME ZERO', price: 19.99, category: 'burger', image: './img/Fome ZERO.jpeg', description: 'Hambúrguer de 10 carnes para os famintos!' }
+    { id: 8, name: 'FOME ZERO', price: 19.99, category: 'burger', image: './img/fome-zero.jpeg', description: 'Hambúrguer de 10 carnes para os famintos!' }
 ];
 
 const menuItemsContainer = document.querySelector('.menu-items');
