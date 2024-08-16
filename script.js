@@ -59,7 +59,7 @@ typeWriter(logoText);
 
 // Menu items
 const menuItems = [
-    { id: 1, name: 'Hambúrguer Clássico', price: 15.99, category: 'burger', image: '/img/classic-burger.jpg', description: 'Carne suculenta, queijo, alface e tomate.' },
+    { id: 1, name: 'Hambúrguer Clássico', price: 15.99, category: 'burger', image: './img/classic-burger.jpg', description: 'Carne suculenta, queijo, alface e tomate.' },
     { id: 2, name: 'Hambúrguer Vegetariano', price: 14.99, category: 'burger', image: '/img/Veggie.jpeg', description: 'Hambúrguer de grão-de-bico com legumes grelhados.' },
     { id: 3, name: 'Batata Frita', price: 5.99, category: 'side', image: '/img/batata-frita.jpg', description: 'Batatas crocantes e douradas.' },
     { id: 4, name: 'Refrigerante', price: 3.99, category: 'drink', image: '/img/coca-cola.jpg', description: 'Diversas opções de refrigerantes.' },
